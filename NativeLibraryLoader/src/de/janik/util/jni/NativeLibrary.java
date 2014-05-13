@@ -127,17 +127,6 @@ public class NativeLibrary
 					.forEach(NativeLibraryLoader::Load);
 	}
 
-	// <- Getter & Setter ->
-	/**
-	 * Return's the name of the library.
-	 * 
-	 * @return The name of the library.
-	 */
-	public String getName()
-	{
-		return name;
-	}
-
 	/**
 	 * Return's a list of dependencies for the current Operating-System.<br>
 	 * An empty list, if no dependencies were specified.
@@ -147,6 +136,17 @@ public class NativeLibrary
 	private List<String> getDependencies()
 	{
 		return dependencies.get(OS.CURRENT_OS);
+	}
+	
+	// <- Getter & Setter ->
+	/**
+	 * Return's the name of the library.
+	 * 
+	 * @return The name of the library.
+	 */
+	public String getName()
+	{
+		return name;
 	}
 
 	// <- Static ->
