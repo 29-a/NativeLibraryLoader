@@ -25,7 +25,7 @@ public final class Main
 
 		/*
 		 * Optional, if no dependencies are specified, every file in the directory
-		 * '/lib/"Library-Name"/"Operating-System"/"Architecture"'
+		 * '/lib/"Library-Name"/"Operating-System"/"Architecture"' is loaded.
 		 */
 		// Windows version compiled with 'Microsoft Visual-Studio 2013 Express (Desktop)' & MASM
 		lib.addDependencie(WINDOWS, "GetInt.dll");
