@@ -1,11 +1,11 @@
 package de.janik.util.jni;
 
 // <- Import ->
+import java.io.File;
+
 // <- Static_Import ->
 import static java.lang.System.load;
 import static java.lang.System.loadLibrary;
-
-import java.io.File;
 
 /**
  * A utility-class to load native library's.
