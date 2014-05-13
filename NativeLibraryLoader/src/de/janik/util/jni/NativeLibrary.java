@@ -1,11 +1,6 @@
 package de.janik.util.jni;
 
-import static de.janik.util.OS.GetCurrentOS;
-import static java.io.File.separator;
 // <- Import ->
-// <- Static_Import ->
-import static java.lang.System.getProperty;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -13,6 +8,11 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import de.janik.util.OS;
+
+// <- Static_Import ->
+import static java.lang.System.getProperty;
+import static de.janik.util.OS.GetCurrentOS;
+import static java.io.File.separator;
 
 /**
  * A representation of a native library. <br>
