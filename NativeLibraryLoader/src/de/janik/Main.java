@@ -21,19 +21,19 @@ public final class Main
 		 * A Simple C/C++ library, that calls an Assembler-Function that writes the number 8 into the register 'eax'.
 		 * Source-Code is included in the 'lib'-directories.
 		 */
-		NativeLibrary lib = new NativeLibrary("GetInt");
+		final NativeLibrary library = new NativeLibrary("GetInt");
 
 		/*
 		 * Optional, if no dependencies are specified, every file in the directory
 		 * '/lib/"Library-Name"/"Operating-System"/"Architecture"' is loaded.
 		 */
 		// Windows version compiled with 'Microsoft Visual-Studio 2013 Express (Desktop)' & MASM
-		lib.addDependencie(WINDOWS, "GetInt.dll");
+		library.addDependencie(WINDOWS, "GetInt.dll");
 
 		// Linux version compiled with 'GCC, the GNU Compiler Collection' & NASM
-		lib.addDependencie(LINUX, "libGetInt.so");
+		library.addDependencie(LINUX, "libGetInt.so");
 
-		lib.load();
+		library.load();
 	}
 
 	// <- Constructor ->
@@ -43,7 +43,7 @@ public final class Main
 	}
 
 	// <- Static ->
-	public static void main(String[] args)
+	public static void main(final String[] args)
 	{
 		out.println(GetInt());
 	}

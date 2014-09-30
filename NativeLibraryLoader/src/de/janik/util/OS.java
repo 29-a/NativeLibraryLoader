@@ -118,7 +118,7 @@ public enum OS
 	 * @param aliases
 	 *            The aliases for the Operating-System.
 	 */
-	OS(String...aliases)
+	OS(final String...aliases)
 	{
 		// To make sure aliases is at least instantiated.
 		this.aliases = (aliases == null ? new String[0] : aliases);
@@ -309,7 +309,7 @@ public enum OS
 	 * @param os
 	 *            The Operating-System that should also be supported;
 	 */
-	public static void AddSupportedOS(OS os)
+	public static void AddSupportedOS(final OS os)
 	{
 		Supported.add(os);
 	}
@@ -320,7 +320,7 @@ public enum OS
 	 * @param os
 	 *            The Operating-System that should be removed from the list of supported Operating-System's.
 	 */
-	public static void RemoveSupportedOS(OS os)
+	public static void RemoveSupportedOS(final OS os)
 	{
 		Supported.remove(os);
 	}

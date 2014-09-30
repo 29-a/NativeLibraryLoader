@@ -21,7 +21,7 @@ import static java.io.File.separator;
  * @author Jan.Marcel.Janik [©2014]
  *
  */
-public class NativeLibrary
+public final class NativeLibrary
 {
 	// <- Public ->
 
@@ -31,22 +31,22 @@ public class NativeLibrary
 	/**
 	 * The absolute path to the '/lib' directory.
 	 */
-	private static final String			Path;
+	private static final String				Path;
 
 	/**
 	 * The name of the library
 	 */
-	private String						name;
+	private final String					name;
 
 	/**
 	 * The absolute path to the directory, containing all the native-files
 	 */
-	private File						path;
+	private final File						path;
 
 	/**
 	 * Hold's a list with all the dependencies for every Operating-System.
 	 */
-	private HashMap<OS, List<String>>	dependencies;
+	private final HashMap<OS, List<String>>	dependencies;
 
 	// <- Static ->
 	static
@@ -61,7 +61,7 @@ public class NativeLibrary
 	 * @param name
 	 *            The name of the library.
 	 */
-	public NativeLibrary(String name)
+	public NativeLibrary(final String name)
 	{
 		this.name = name;
 		path = new File(Path + name);
@@ -85,7 +85,7 @@ public class NativeLibrary
 	 * 
 	 * @see de.janik.util.OS
 	 */
-	public void addDependencie(OS os, String file)
+	public void addDependencie(final OS os, final String file)
 	{
 		dependencies.get(os).add(file);
 	}
@@ -100,7 +100,7 @@ public class NativeLibrary
 	 * @param dependencies
 	 *            An array of dependencies.
 	 */
-	public void setDependencies(OS os, String...dependencies)
+	public void setDependencies(final OS os, final String...dependencies)
 	{
 		List<String> list = this.dependencies.get(os);
 		list.clear();
@@ -123,8 +123,7 @@ public class NativeLibrary
 		if (dependencies.size() == 0)
 			Stream.of(new File(path.getAbsolutePath() + separator + os).listFiles(file -> file.isFile())).forEach(NativeLibraryLoader::Load);
 		else
-			dependencies.stream().map(dependencie -> new File(path.getAbsolutePath() + separator + os + separator + dependencie))
-					.forEach(NativeLibraryLoader::Load);
+			dependencies.stream().map(dependencie -> new File(path.getAbsolutePath() + separator + os + separator + dependencie)).forEach(NativeLibraryLoader::Load);
 	}
 
 	/**
@@ -137,7 +136,7 @@ public class NativeLibrary
 	{
 		return dependencies.get(OS.CURRENT_OS);
 	}
-	
+
 	// <- Getter & Setter ->
 	/**
 	 * Return's the name of the library.

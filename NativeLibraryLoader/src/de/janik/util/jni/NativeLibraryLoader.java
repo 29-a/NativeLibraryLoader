@@ -1,11 +1,11 @@
 package de.janik.util.jni;
 
 // <- Import ->
-import java.io.File;
-
 // <- Static_Import ->
 import static java.lang.System.load;
 import static java.lang.System.loadLibrary;
+
+import java.io.File;
 
 /**
  * A utility-class to load native library's.
@@ -39,7 +39,7 @@ public final class NativeLibraryLoader
 	 * @param lib
 	 *            The library to be loaded.
 	 */
-	public static void Load(NativeLibrary lib)
+	public static void Load(final NativeLibrary lib)
 	{
 		lib.load();
 	}
@@ -52,7 +52,7 @@ public final class NativeLibraryLoader
 	 * @param file
 	 *            The file to be loaded.
 	 */
-	public static void Load(File file)
+	public static void Load(final File file)
 	{
 		load(file.getAbsolutePath());
 	}
@@ -71,7 +71,7 @@ public final class NativeLibraryLoader
 	 * @param name
 	 *            The name of the library-file.
 	 */
-	public static void Load(String name)
+	public static void Load(final String name)
 	{
 		loadLibrary(name);
 	}
