@@ -1,0 +1,8 @@
+# Ignore InteliJ project settings.
+.idea
+
+# Ignore InteliJ project file.
+*.iml
+
+# Ignore binary debug files.
+out
